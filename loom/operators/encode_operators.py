@@ -36,7 +36,7 @@ from time import strftime
 from ..helpers.globals_utils import replace_globals
 
 
-def codec_callback(scene, context):
+def codec_callback(self, context):
     codec = [
         ('PRORES422', "Apple ProRes 422", ""),
         ('PRORES422HQ', "Apple ProRes 422 HQ", ""),
@@ -58,7 +58,7 @@ def codec_callback(scene, context):
     return codec
 
 
-def colorspace_callback(scene, context):
+def colorspace_callback(self, context):
     colorspace = [
         ('iec61966_2_1', "sRGB", ""),
         ('bt709', "rec709", ""),

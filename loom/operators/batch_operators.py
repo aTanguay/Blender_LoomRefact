@@ -51,12 +51,12 @@ class LOOM_OT_batch_dialog(bpy.types.Operator):
     colorspace: bpy.props.EnumProperty(
         name="Colorspace",
         description="colorspace",
-        items='encode_operators.colorspace_callback')
+        items=encode_operators.colorspace_callback)
 
     codec: bpy.props.EnumProperty(
         name="Codec",
         description="Codec",
-        items='encode_operators.codec_callback')
+        items=encode_operators.codec_callback)
 
     fps: bpy.props.IntProperty(
         name="Frame Rate",

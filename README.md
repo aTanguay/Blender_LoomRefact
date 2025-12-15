@@ -33,11 +33,16 @@ This is a fully refactored version of the **Loom** addon, restructured from a si
 
 ## 📚 Documentation
 
-- **INSTALLATION_INSTRUCTIONS.md** - Complete installation guide
-- **FIXES_APPLIED.md** - All 7 fixes documented in detail
-- **BUILD_SUMMARY.md** - Build overview and testing checklist
-- **TESTING_PROGRESS.md** - Current testing status
-- **CLAUDE.md** - Refactoring session guide
+All documentation is organized in the **[DOCS/](DOCS/)** directory:
+
+- **[QUICK_TEST.md](QUICK_TEST.md)** - Quick command-line testing guide ⚡
+- **[DOCS/BLENDER_CLI_SETUP.md](DOCS/BLENDER_CLI_SETUP.md)** - Setup Blender CLI access
+- **[DOCS/INSTALLATION_INSTRUCTIONS.md](DOCS/INSTALLATION_INSTRUCTIONS.md)** - Complete installation guide
+- **[DOCS/FIXES_APPLIED.md](DOCS/FIXES_APPLIED.md)** - All 7 fixes documented in detail
+- **[DOCS/BUILD_SUMMARY.md](DOCS/BUILD_SUMMARY.md)** - Build overview and testing checklist
+- **[DOCS/TESTING_PROGRESS.md](DOCS/TESTING_PROGRESS.md)** - Current testing status
+
+See **[DOCS/README.md](DOCS/README.md)** for complete documentation index.
 
 ---
 
@@ -76,7 +81,7 @@ This is a fully refactored version of the **Loom** addon, restructured from a si
 6. ✅ Missing import: ExportHelper
 7. ✅ Incorrect EnumProperty callback signature
 
-See **FIXES_APPLIED.md** for details.
+See **[DOCS/FIXES_APPLIED.md](DOCS/FIXES_APPLIED.md)** for details.
 
 ---
 

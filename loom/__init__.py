@@ -93,8 +93,13 @@ def register():
 
     # Hotkey registration
     addon_name = __package__
-    prefs = bpy.context.preferences.addons[addon_name].preferences
-    playblast = prefs.playblast_flag
+    # Check if preferences are available (they might not be during initial registration)
+    try:
+        prefs = bpy.context.preferences.addons[addon_name].preferences
+        playblast = prefs.playblast_flag
+    except KeyError:
+        # Preferences not yet available, use default
+        playblast = False
     kc = bpy.context.window_manager.keyconfigs.addon
     if kc:
         km = kc.keymaps.new(name="Screen", space_type='EMPTY')
