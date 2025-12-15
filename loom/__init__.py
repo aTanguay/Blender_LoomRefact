@@ -94,12 +94,15 @@ def register():
     # Hotkey registration
     addon_name = __package__
     # Check if preferences are available (they might not be during initial registration)
+    playblast = False
+    prefs = None
     try:
         prefs = bpy.context.preferences.addons[addon_name].preferences
         playblast = prefs.playblast_flag
     except KeyError:
         # Preferences not yet available, use default
-        playblast = False
+        pass
+
     kc = bpy.context.window_manager.keyconfigs.addon
     if kc:
         km = kc.keymaps.new(name="Screen", space_type='EMPTY')
@@ -156,21 +159,22 @@ def register():
             kmi.active = True
             addon_keymaps.append((km, kmi))
 
-    # Initialize global variables
-    glob = prefs.global_variable_coll
-    if not glob:
-        for key, value in global_var_defaults.items():
-            gvi = glob.add()
-            gvi.name = key
-            gvi.expr = value
+    # Initialize global variables (only if prefs are available)
+    if prefs:
+        glob = prefs.global_variable_coll
+        if not glob:
+            for key, value in global_var_defaults.items():
+                gvi = glob.add()
+                gvi.name = key
+                gvi.expr = value
 
-    # Initialize project directories
-    dirs = prefs.project_directory_coll
-    if not dirs:
-        for key, value in project_directories.items():
-            di = dirs.add()
-            di.name = value
-            di.creation_flag = True
+        # Initialize project directories
+        dirs = prefs.project_directory_coll
+        if not dirs:
+            for key, value in project_directories.items():
+                di = dirs.add()
+                di.name = value
+                di.creation_flag = True
 
     # Append UI draw functions to Blender panels
     bpy.types.TOPBAR_MT_render.append(ui.draw_functions.draw_loom_render_menu)

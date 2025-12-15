@@ -50,36 +50,42 @@ This directory contains all documentation related to the Loom addon refactoring 
 
 ## 📊 Quick Reference
 
-### Issues Fixed
+### Issues Fixed (10 Total)
 1. Invalid regex escape sequences (3 files)
 2. Duplicate Scene.loom registration
 3. Duplicate draw function registration
 4. Missing import: LOOM_PG_generic_arguments
 5. Missing import: LOOM_MT_render_presets
 6. Missing import: ExportHelper
-7. Incorrect EnumProperty callback signature
+7. Incorrect EnumProperty callback signature (render_props)
+8. Incorrect EnumProperty callback signatures (encode_operators)
+9. String-based EnumProperty references (batch_operators)
+10. KeyError during addon registration
 
-### Key Files Modified
+### Key Files Modified (12 Total)
 - `loom/ui/draw_functions.py`
-- `loom/operators/encode_operators.py`
+- `loom/operators/encode_operators.py` (regex + callbacks)
 - `loom/operators/playblast_operators.py`
-- `loom/properties/__init__.py`
-- `loom/ui/__init__.py`
+- `loom/operators/batch_operators.py`
 - `loom/operators/terminal_operators.py`
 - `loom/operators/render_operators.py`
 - `loom/operators/utils_operators.py`
+- `loom/properties/__init__.py`
 - `loom/properties/render_props.py`
 - `loom/properties/scene_props.py`
+- `loom/ui/__init__.py`
+- `loom/__init__.py` (registration fix)
 
 ---
 
 ## 🎯 Current Status
 
 **Refactoring:** 100% Complete ✅
-**Build Issues:** 7/7 Fixed ✅
+**Build Issues:** 10/10 Fixed ✅
 **Installation:** Verified on Blender 5.0 ✅
-**Testing:** Installation passed, feature testing in progress
+**ZIP Structure:** Corrected ✅
+**Testing:** Installation passed, ready for feature testing
 
 ---
 
-**Last Updated:** 2025-12-14
+**Last Updated:** 2025-12-15

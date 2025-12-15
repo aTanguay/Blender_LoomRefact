@@ -1,8 +1,8 @@
 # Loom Blender Addon - Refactored Version
 
-**Version:** 0.9.5  
-**Status:** ✅ Successfully Installed & Tested on Blender 5.0  
-**Build Date:** 2025-12-14
+**Version:** 0.9.5
+**Status:** ✅ Build Complete - All 10 Issues Fixed - Ready for Feature Testing
+**Build Date:** 2025-12-15
 
 ---
 
@@ -38,7 +38,7 @@ All documentation is organized in the **[DOCS/](DOCS/)** directory:
 - **[QUICK_TEST.md](QUICK_TEST.md)** - Quick command-line testing guide ⚡
 - **[DOCS/BLENDER_CLI_SETUP.md](DOCS/BLENDER_CLI_SETUP.md)** - Setup Blender CLI access
 - **[DOCS/INSTALLATION_INSTRUCTIONS.md](DOCS/INSTALLATION_INSTRUCTIONS.md)** - Complete installation guide
-- **[DOCS/FIXES_APPLIED.md](DOCS/FIXES_APPLIED.md)** - All 7 fixes documented in detail
+- **[DOCS/FIXES_APPLIED.md](DOCS/FIXES_APPLIED.md)** - All 10 fixes documented in detail
 - **[DOCS/BUILD_SUMMARY.md](DOCS/BUILD_SUMMARY.md)** - Build overview and testing checklist
 - **[DOCS/TESTING_PROGRESS.md](DOCS/TESTING_PROGRESS.md)** - Current testing status
 
@@ -71,15 +71,18 @@ See **[DOCS/README.md](DOCS/README.md)** for complete documentation index.
 
 ---
 
-## 🔧 Fixed Issues (7 Total)
+## 🔧 Fixed Issues (10 Total)
 
-1. ✅ Invalid regex escape sequences
+1. ✅ Invalid regex escape sequences (3 files)
 2. ✅ Duplicate Scene.loom registration
 3. ✅ Duplicate draw function registration
 4. ✅ Missing import: LOOM_PG_generic_arguments
 5. ✅ Missing import: LOOM_MT_render_presets
 6. ✅ Missing import: ExportHelper
-7. ✅ Incorrect EnumProperty callback signature
+7. ✅ Incorrect EnumProperty callback signature (render_props)
+8. ✅ Incorrect EnumProperty callback signatures (encode_operators)
+9. ✅ String-based EnumProperty references (batch_operators)
+10. ✅ KeyError during addon registration
 
 See **[DOCS/FIXES_APPLIED.md](DOCS/FIXES_APPLIED.md)** for details.
 
