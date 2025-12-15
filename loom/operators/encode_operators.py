@@ -661,7 +661,7 @@ class LOOM_OT_load_image_sequence(bpy.types.Operator, ImportHelper):
     def bound_frame(self, frame_path, frame_iter):
         folder, filename = os.path.split(frame_path)
         digits = self.number_suffix(filename)
-        frame = re.sub('\d(?!\d)', lambda x: str(int(x.group(0)) + frame_iter), digits)
+        frame = re.sub(r'\d(?!\d)', lambda x: str(int(x.group(0)) + frame_iter), digits)
         return os.path.exists(os.path.join(folder, frame.join(filename.rsplit(digits))))
 
     def is_sequence(self, filepath):

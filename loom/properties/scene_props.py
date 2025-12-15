@@ -34,7 +34,7 @@ from .render_props import (
     LOOM_PG_batch_render,
     LOOM_PG_preset_flags,
     LOOM_PG_paths,
-    render_preset_callback,
+    render_preset_callback,  # Callback function for custom_render_presets enum
 )
 
 

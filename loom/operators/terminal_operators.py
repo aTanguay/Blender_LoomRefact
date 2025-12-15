@@ -28,6 +28,9 @@ import subprocess
 import tempfile
 from sys import platform
 
+# Import property groups
+from ..properties.ui_props import LOOM_PG_generic_arguments
+
 
 class LOOM_OT_clear_dialog(bpy.types.Operator):
     """Clear Log Collection"""

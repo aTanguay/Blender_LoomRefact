@@ -35,6 +35,9 @@ from ..helpers.blender_compat import get_compositor_node_tree
 from ..helpers.frame_utils import filter_frames
 from ..helpers.version_utils import version_number
 
+# Import presets
+from ..presets.render_presets import LOOM_MT_render_presets
+
 
 class LOOM_OT_render_threads(bpy.types.Operator):
     """Set all available threads"""
@@ -618,7 +621,7 @@ class LOOM_OT_render_image_sequence(bpy.types.Operator):
             if self.render_preset and self.render_preset != "EMPTY":
                 bpy.ops.script.execute_preset(
                     filepath=os.path.join(loom_prefs.render_presets_path,self.render_preset),
-                    menu_idname=LOOM_PT_render_presets.__name__)
+                    menu_idname=LOOM_MT_render_presets.__name__)
             
             for frame_number in self._frames:
                 self.frame_repath(scn, frame_number)

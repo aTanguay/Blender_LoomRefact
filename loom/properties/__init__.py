@@ -45,14 +45,13 @@ def register():
     for cls in classes:
         bpy.utils.register_class(cls)
 
-    # Attach scene properties to bpy.types.Scene
-    bpy.types.Scene.loom = bpy.props.PointerProperty(type=scene_props.LOOM_PG_scene_settings)
+    # Note: Scene.loom property is attached in the main __init__.py
+    # after all modules are registered to ensure proper registration order
 
 
 def unregister():
     """Unregister all property groups and preferences."""
-    # Remove scene properties
-    del bpy.types.Scene.loom
+    # Note: Scene.loom property is removed in the main __init__.py
 
     # Unregister all classes in reverse order
     for cls in reversed(classes):

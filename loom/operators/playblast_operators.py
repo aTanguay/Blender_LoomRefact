@@ -43,7 +43,7 @@ class LOOM_OT_playblast(bpy.types.Operator):
     _image_sequence = {}
 
     def is_sequence(self, filepath):
-        next_frame = re.sub('\d(?!\d)', lambda x: str(int(x.group(0)) + 1), filepath)
+        next_frame = re.sub(r'\d(?!\d)', lambda x: str(int(x.group(0)) + 1), filepath)
         return True if os.path.exists(next_frame) else False
 
     def number_suffix(self, filename):

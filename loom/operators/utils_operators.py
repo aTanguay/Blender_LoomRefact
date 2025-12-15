@@ -24,7 +24,7 @@ and project setup.
 """
 
 import bpy
-from bpy_extras.io_utils import ImportHelper
+from bpy_extras.io_utils import ImportHelper, ExportHelper
 import os
 import subprocess
 import webbrowser

@@ -27,18 +27,19 @@ import bpy
 import os
 
 
-def render_preset_callback(scene, context, addon_name):
+def render_preset_callback(self, context):
     """Callback to populate render preset enum items.
 
     Args:
-        scene: Current scene
+        self: Property being updated
         context: Blender context
-        addon_name: Name of the addon for accessing preferences
 
     Returns:
         List of tuples for enum items
     """
     items = [('EMPTY', "Current Render Settings", "")]
+    # Get addon name from the package path
+    addon_name = __package__.split('.')[0]
     preset_path = context.preferences.addons[addon_name].preferences.render_presets_path
     if os.path.exists(preset_path):
         for f in os.listdir(preset_path):

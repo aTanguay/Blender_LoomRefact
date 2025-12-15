@@ -81,7 +81,7 @@ def draw_loom_marker_menu(self, context):
 def draw_loom_version_number(self, context):
     """Append Version Number Slider to the Output Area."""
     addon_name = __package__.split('.')[0]
-    if re.search("v\d+", context.scene.render.filepath) is not None:
+    if re.search(r"v\d+", context.scene.render.filepath) is not None:
         glob_vars = context.preferences.addons[addon_name].preferences.global_variable_coll
         output_folder, file_name = os.path.split(bpy.path.abspath(context.scene.render.filepath))
         if any(ext in output_folder for ext in glob_vars.keys()):
